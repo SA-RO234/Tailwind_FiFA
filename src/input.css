@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+* {
+  font-family: "Sirin Stencil", sans-serif;
+  /* font-family: "Space Grotesk", sans-serif; */
+  @apply select-none;
+}
+@theme {
+  --color-primary-500: rgb(2, 18, 44);
+}
+
+/*  Swipper CSS */
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperSlide-Schedule {
+  display: flex !important;
+  justify-content: center;
+  align-items: start !important;
+  gap: 20px;
+  background-color: transparent !important;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next {
+  color: #fff !important;
+}
+
+.swiper-pagination-bullet {
+  opacity: 0.6 !important;
+  background: #0b0b0b !important; /* Change to your desired color (Tailwind cyan-400) */
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #ffffff !important; /* Change to your desired active color (Tailwind green-500) */
+}

@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html class="bg-primary-500" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <!--  Flowbit -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <!--  font awsome CDN  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--  Swipper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!--  google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Playwrite+PL:wght@100..400&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sirin+Stencil&family=Space+Grotesk:wght@300..700&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="w-full bg-transparent">
+      <!-- Navbar  -->
+      <div class="navbar bg-transparent px-10 py-5 shadow-sm">
+        <div class="flex w-[50%] flex-1 items-center">
+          <button type="button" class="xl:hidden text-4xl block">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <a href="#" class="cursor-pointer btn-ghost bg text-xl">
+            <img class="w-35" src="/src/assets/logo.png" alt="" />
+          </a>
+
+          <ul class="flex justify-start gap-10">
+            <li>
+              <a class="uppercase hover:text-green-500 text-2xl" href="#">
+                Home
+              </a>
+            </li>
+            <li>
+              <a class="uppercase hover:text-green-500 text-2xl" href="#">
+                AFC
+              </a>
+            </li>
+            <li>
+              <a class="uppercase hover:text-green-500 text-2xl" href="#">
+                Live
+              </a>
+            </li>
+            <li>
+              <a class="uppercase hover:text-green-500 text-2xl" href="#">
+                Original
+              </a>
+            </li>
+            <li>
+              <a class="uppercase hover:text-green-500 text-2xl" href="#">
+                Fifa Archive
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex w-[50%] justify-end pr-10 gap-7">
+          <div class="flex relative">
+            <input
+              type="text"
+              placeholder="Search"
+              class="rounded-[60px] border-2 bg-gray-700 placeholder:text-2xl border-transparent focus:border-green-500 focus:ring-0"
+            />
+            <img
+              src="/src/assets/search.png"
+              class="absolute right-5 top-4 w-6"
+              alt=""
+            />
+          </div>
+
+          <button
+            class="bg-white rounded-[50px] py-1 cursor-pointer text-black text-2xl font-md px-5"
+            type="button"
+          >
+            Sign In
+          </button>
+
+          <button
+            id="dropdownHoverButton"
+            data-dropdown-toggle="dropdownHover"
+            data-dropdown-trigger="hover"
+            class="text-white bg-gray-700 font-md text-2xl px-5 py-2.5 text-center inline-flex items-center"
+            type="button"
+          >
+            EN
+            <svg
+              class="w-2.5 h-2.5 ms-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownHover"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-50 dark:bg-gray-700"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownHoverButton"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block uppercase text-2xl px-4 py-2 hover:text-green-500"
+                >
+                  Khmer
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block uppercase text-2xl px-4 py-2 hover:text-green-500"
+                >
+                  United State
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block uppercase text-2xl px-4 py-2 hover:text-green-500"
+                >
+                  Japan
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block uppercase text-2xl px-4 py-2 hover:text-green-500"
+                >
+                  Spain
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--  Carousel -->
+      <!-- Swiper -->
+      <div class="swiper mySwiper w-[90%] mx-auto h-[500px]">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div
+              class="absolute text-start w-[50%] h-auto text-white z-[0] left-[50px] top-[100px] flex flex-col"
+            >
+              <p
+                class="title uppercase text-2xl w-[170px] pb-1 flex justify-center rounded-4xl font-bold bg-[rgba(83,82,82,0.72)]"
+              >
+                Fifa archive
+              </p>
+              <h1 class="main-title text-[70px] font-[900]">
+                All Roads Load Down Under
+              </h1>
+              <p class="des">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt, mollitia! Quia, accusantium voluptates? Hic, ducimus?
+              </p>
+            </div>
+            <img
+              class="h-full absolute z-[-1] w-full"
+              src="/src/assets/slide1.png"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="absolute text-start w-[50%] h-auto text-white z-[0] left-[50px] top-[100px] flex flex-col"
+            >
+              <p
+                class="title uppercase text-2xl w-[170px] pb-1 flex justify-center rounded-4xl font-bold bg-[rgba(83,82,82,0.72)]"
+              >
+                Fifa archive
+              </p>
+              <h1 class="main-title text-[70px] font-[900]">
+                All Roads Load Down Under
+              </h1>
+              <p class="des">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt, mollitia! Quia, accusantium voluptates? Hic, ducimus?
+              </p>
+            </div>
+            <img
+              class="h-full absolute z-[-1] w-full"
+              src="/src/assets/slide4.png"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide">
+            <div
+              class="absolute text-start w-[50%] h-auto text-white z-[0] left-[50px] top-[100px] flex flex-col"
+            >
+              <p
+                class="title uppercase text-2xl w-[170px] pb-1 flex justify-center rounded-4xl font-bold bg-[rgba(83,82,82,0.72)]"
+              >
+                Fifa archive
+              </p>
+              <h1 class="main-title text-[70px] font-[900]">
+                All Roads Load Down Under
+              </h1>
+              <p class="des">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt, mollitia! Quia, accusantium voluptates? Hic, ducimus?
+              </p>
+            </div>
+            <img
+              class="h-full absolute z-[-1] w-full"
+              src="/src/assets/slide4.png"
+              alt=""
+            />
+          </div>
+          <!-- Add more swiper-slide here if needed -->
+        </div>
+        <!-- Navigation buttons OUTSIDE swiper-wrapper -->
+        <div class="absolute right-5 z-20 gap-5 flex bottom-10">
+          <div
+            class="previous cursor-pointer text-2xl p-[5px_6px] bg-gray-700 rounded-full text-white"
+          >
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div
+            class="next cursor-pointer text-2xl p-[5px_6px] bg-gray-700 rounded-full text-white"
+          >
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!--  Live Schedule -->
+    <section class="live-ScheduleContainer bg-transparent w-[95%] float-end">
+      <header class="flex justify-between w-full items-center">
+        <nav
+          class="w-[250px] relative overflow-hidden group py-10 items-end flex justify-start"
+        >
+          <a
+            href="#"
+            class="link relative after:w-full group-hover:after:translate-x-0 after:duration-300 after:translate-x-[-100%] duration-300 after:content-[''] after:h-[2px] after:bg-white after:block after:absolute no-underline text-3xl"
+          >
+            Live Schedule
+          </a>
+          <i
+            class="fa-solid group-hover:pl-8 duration-300 text-2xl fa-angle-right"
+          ></i>
+          <div
+            class="arrow w-[20px] hidden duration-300 group-hover:block delay-700 bottom-[43%] h-[3px] absolute right-[20%] bg-white"
+          ></div>
+        </nav>
+        <div class="flex gap-5">
+          <div
+            class="previous-btn cursor-pointer text-2xl p-[5px_6px] bg-gray-700 rounded-full text-white"
+          >
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div
+            class="next-btn cursor-pointer text-2xl p-[5px_6px] bg-gray-700 rounded-full text-white"
+          >
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+      </header>
+      <!-- Swiper -->
+      <div class="swiper swiperSchedule w-[100%] mx-auto h-auto">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiperSlide-Schedule">
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide swiperSlide-Schedule">
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+            <div class="w-[300px] h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <p
+                  class="bg-gray-100 absolute z-50 top-2 left-3 t duration-200ext-[1.5em] px-3 py-0 w-[120px] rounded-full text-black"
+                >
+                  Sat
+                  <span>00</span>
+                  :
+                  <span>50</span>
+                </p>
+
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/LiveSchedule/img1.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px] text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Real Matrid V Bacelona
+                </p>
+                <p class="des text-xl">CFU Girls' Challenge Series U14</p>
+                <p class="country text-xl">Caribbean Football Union</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add more swiper-slide here if needed -->
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="remember-section rounded-3xl overflow-hidden relative w-[90%] mt-[450px] mx-auto h-[400px]"
+    >
+      <img
+        src="/src/assets/poster.png"
+        class="w-full absolute object-cover h-full"
+        alt=""
+      />
+      <div
+        class="article absolute flex gap-5 flex-col right-20 top-[20%] w-[40%] h-full"
+      >
+        <h1 class="title text-4xl">Do You Remember?</h1>
+        <p class="des text-2xl">
+          The match, the goal, the memory you've been thinking about, all within
+          the world's most extensive library of FIFA Tournaments.
+        </p>
+        <button
+          type="button"
+          class="uppercase text-2xl hover:bg-gray-400 duration-300 w-[60%] bg-white text-black p-[10px_30px] rounded-full cursor-pointer"
+        >
+          Search the fifa archive
+        </button>
+      </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="live-ScheduleContainer bg-transparent w-[95%] float-end">
+      <header class="flex justify-between w-full items-center">
+        <nav
+          class="w-[400px] relative overflow-hidden group py-10 items-end flex justify-start"
+        >
+          <a
+            href="#"
+            class="link relative after:w-full group-hover:after:translate-x-0 after:duration-300 after:translate-x-[-100%] duration-300 after:content-[''] after:h-[2px] after:bg-white after:block after:absolute no-underline text-3xl"
+          >
+            Featured Competitions
+          </a>
+          <i
+            class="fa-solid group-hover:pl-8 duration-300 text-2xl fa-angle-right"
+          ></i>
+          <div
+            class="arrow w-[20px] hidden duration-300 group-hover:block delay-700 bottom-[43%] h-[3px] absolute right-[20%] bg-white"
+          ></div>
+        </nav>
+        <div class="flex gap-5">
+          <div
+            class="previous-btn cursor-pointer text-2xl p-[5px_6px] bg-gray-700 rounded-full text-white"
+          >
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div
+            class="next-btn cursor-pointer text-2xl p-[5px_6px] bg-gray-700 rounded-full text-white"
+          >
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </div>
+      </header>
+      <!-- Swiper -->
+      <div class="swiper swiperSchedule w-[100%] mx-auto h-auto">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiperSlide-Schedule">
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/france.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  France National Team
+                </p>
+              </div>
+            </div>
+           <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/laliga.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Laliga
+                </p>
+              </div>
+            </div>
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/en.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  English Premier Langue
+                </p>
+              </div>
+            </div>
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/budesliga.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                 Germany National Team 
+                </p>
+              </div>
+            </div>
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105  duration-500"
+                  src="/src/assets/cam.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Cambodia National Team
+                </p>
+              </div>
+            </div>
+          
+          </div>
+           <div class="swiper-slide swiperSlide-Schedule">
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/france.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  France National Team
+                </p>
+              </div>
+            </div>
+           <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/laliga.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Laliga
+                </p>
+              </div>
+            </div>
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/en.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  English Premier Langue
+                </p>
+              </div>
+            </div>
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105 duration-500"
+                  src="/src/assets/budesliga.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                 Germany National Team 
+                </p>
+              </div>
+            </div>
+            <div class="w-[300px]  h-[300px]">
+              <div
+                class="w-full text-white h-[50%] overflow-hidden group relative rounded-3xl"
+              >
+                <img
+                  class="group-hover:scale-105  duration-500"
+                  src="/src/assets/cam.png"
+                  alt=""
+                />
+              </div>
+              <div class="h-[100px]  text-start w-full">
+                <p class="title text-white text-2xl font-bold">
+                  Cambodia National Team
+                </p>
+              </div>
+            </div>
+          
+          </div>
+          <!-- Add more swiper-slide here if needed -->
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".next",
+        prevEl: ".previous",
+      },
+    });
+  </script>
+
+  <!--  Card Schedule -->
+  <script>
+    // Init Swiper
+    var swiper = new Swiper(".swiperSchedule", {
+      spaceBetween: 50,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".next-btn",
+        prevEl: ".previous-btn",
+      },
+      // Enable debugger
+      debugger: true,
+    });
+  </script>
+
+  <!--  Flowbith -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</html>
